@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Marcenaria Pro - App Gratuito para Marceneiros</title>
+    <meta name="description" content="O app completo para marceneiros: 400+ padrões MDF, calculadora de materiais e gestão de projetos. Baixe grátis e teste agora!">
+    <meta name="keywords" content="app marceneiro, catálogo MDF, calculadora marcenaria, Guararapes, Arauco, Eucatex, Duratex">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪚</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2D5016;
+            --primary-light: #4A7C2A;
+            --accent: #8B6914;
+            --dark: #1A1A1A;
+            --light: #FAFAF8;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Container principal */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        /* Header minimalista */
+        .header {
+            text-align: center;
+            padding: 2rem 0 3rem;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 3rem 0 4rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            letter-spacing: -0.03em;
+        }
+        
+        .hero h1 .highlight {
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            color: #555;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Botão de Download */
+        .download-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn-download {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1.5rem 4rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.3rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 8px 30px rgba(45, 80, 22, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(45, 80, 22, 0.4);
+            background: var(--primary-light);
+        }
+        
+        .btn-download:active {
+            transform: translateY(-1px);
+        }
+        
+        .version-info {
+            font-size: 0.95rem;
+            color: #888;
+        }
+        
+        .version-info strong {
+            color: var(--primary);
+        }
+        
+        /* Badges */
+        .badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .badge {
+            background: var(--white);
+            border: 2px solid #E5E5E5;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #555;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .badge-icon {
+            font-size: 1.2rem;
+        }
+        
+        /* Benefícios Grid */
+        .benefits {
+            margin: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 4rem;
+            color: var(--dark);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .benefit-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .benefit-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .benefit-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .benefit-description {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
+        .benefit-list {
+            margin-top: 1rem;
+            padding-left: 0;
+            list-style: none;
+        }
+        
+        .benefit-list li {
+            padding: 0.5rem 0;
+            color: #555;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+        
+        .benefit-list li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        /* Stats */
+        .stats {
+            background: var(--primary);
+            padding: 4rem 2rem;
+            border-radius: 30px;
+            margin: 5rem 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .stat-item {
+            color: var(--white);
+        }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        /* CTA Final */
+        .cta-final {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #F5F5F3 0%, #FAFAF8 100%);
+            border-radius: 30px;
+            margin: 5rem 0 3rem;
+        }
+        
+        .cta-final h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .cta-final p {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Nota de versão beta */
+        .beta-notice {
+            background: #FFF3CD;
+            border: 2px solid #FFE69C;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 700px;
+            text-align: center;
+        }
+        
+        .beta-notice strong {
+            color: #856404;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .beta-notice p {
+            color: #856404;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        /* Footer minimalista */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+            color: #888;
+            border-top: 1px solid #E5E5E5;
+            margin-top: 3rem;
+        }
+        
+        .footer-brand {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .footer-contact {
+            margin-top: 1.5rem;
+        }
+        
+        .footer-contact a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .btn-download {
+                padding: 1.3rem 3rem;
+                font-size: 1.1rem;
+                width: 100%;
+                max-width: 400px;
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+            
+            .cta-final h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-final p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero, .benefit-card, .stats, .cta-final {
+            animation: fadeInUp 0.6s ease-out both;
+        }
+        
+        .benefit-card:nth-child(1) { animation-delay: 0.1s; }
+        .benefit-card:nth-child(2) { animation-delay: 0.2s; }
+        .benefit-card:nth-child(3) { animation-delay: 0.3s; }
+        .benefit-card:nth-child(4) { animation-delay: 0.4s; }
+        .benefit-card:nth-child(5) { animation-delay: 0.5s; }
+        .benefit-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span>🪚</span>
+                Marcenaria Pro
+            </div>
+            <p class="tagline">O app profissional que você precisa</p>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>
+                Trabalhe com <span class="highlight">mais precisão</span><br>
+                e <span class="highlight">profissionalismo</span>
+            </h1>
+            <p>
+                Tenha na palma da mão 400+ padrões de MDF, calculadora técnica, 
+                banco de dados completo e gestão de projetos. Tudo 100% grátis.
+            </p>
+            
+            <div class="download-section">
+                <a href="https://drive.google.com/file/d/SEU-LINK-AQUI/view?usp=sharing" class="btn-download" download>
+                    📥 Baixar App de Teste
+                </a>
+                <p class="version-info">
+                    <strong>Versão Beta 1.0</strong> • Android APK • 15 MB
+                </p>
+            </div>
+            
+            <div class="beta-notice">
+                <strong>⚠️ App em Fase de Testes</strong>
+                <p>
+                    Ative "Instalar apps desconhecidos" nas configurações do seu Android.<br>
+                    Seu feedback é essencial para melhorarmos!
+                </p>
+            </div>
+            
+            <div class="badges">
+                <span class="badge">
+                    <span class="badge-icon">✓</span>
+                    100% Grátis
+                </span>
+                <span class="badge">
+                    <span class="badge-icon">📱</span>
+                    Funciona Offline
+                </span>
+                <span class="badge">
+                    <span class="badge-icon">🇧🇷</span>
+                    Feito no Brasil
+                </span>
+            </div>
+        </section>
+
+        <!-- Benefícios -->
+        <section class="benefits">
+            <h2 class="section-title">Por que usar o Marcenaria Pro?</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">📚</span>
+                    <h3 class="benefit-title">Catálogos Completos</h3>
+                    <p class="benefit-description">
+                        Acesse todos os catálogos MDF 2024-2025 em um só lugar
+                    </p>
+                    <ul class="benefit-list">
+                        <li>Guararapes (80 padrões)</li>
+                        <li>Arauco (80 padrões)</li>
+                        <li>Eucatex (58 padrões)</li>
+                        <li>Duratex (70+ padrões)</li>
+                        <li>Placas Brasil</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card">
+                    <span class="benefit-icon">🧮</span>
+                    <h3 class="benefit-title">Calculadora Profissional</h3>
+                    <p class="benefit-description">
+                        Calcule materiais com precisão e evite desperdícios
+                    </p>
+                    <ul class="benefit-list">
+                        <li>Quantidade de chapas MDF</li>
+                        <li>Capacidade de carga</li>
+                        <li>Vão livre máximo</li>
+                        <li>Custo de materiais</li>
+                        <li>Percentual de perda</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card">
+                    <span class="benefit-icon">🔧</span>
+                    <h3 class="benefit-title">Banco de Dados Técnico</h3>
+                    <p class="benefit-description">
+                        Todas as especificações técnicas que você precisa
+                    </p>
+                    <ul class="benefit-list">
+                        <li>Espessuras de MDF</li>
+                        <li>Tipos de corrediças</li>
+                        <li>Sistemas de portas</li>
+                        <li>Técnicas de instalação</li>
+                        <li>Tabelas de capacidade</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card">
+                    <span class="benefit-icon">📐</span>
+                    <h3 class="benefit-title">Gestão de Projetos</h3>
+                    <p class="benefit-description">
+                        Organize seus trabalhos e gere orçamentos rápido
+                    </p>
+                    <ul class="benefit-list">
+                        <li>Salvar projetos</li>
+                        <li>Calcular materiais</li>
+                        <li>Gerar orçamentos PDF</li>
+                        <li>Histórico completo</li>
+                        <li>Compartilhar com clientes</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card">
+                    <span class="benefit-icon">🎨</span>
+                    <h3 class="benefit-title">Comparador de Padrões</h3>
+                    <p class="benefit-description">
+                        Compare padrões lado a lado antes de decidir
+                    </p>
+                    <ul class="benefit-list">
+                        <li>Até 3 padrões simultâneos</li>
+                        <li>Ver acabamentos</li>
+                        <li>Comparar resistências</li>
+                        <li>Sugestões de combinação</li>
+                        <li>Salvar favoritos</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card">
+                    <span class="benefit-icon">💾</span>
+                    <h3 class="benefit-title">Funciona Sem Internet</h3>
+                    <p class="benefit-description">
+                        Trabalhe em qualquer lugar, mesmo sem conexão
+                    </p>
+                    <ul class="benefit-list">
+                        <li>Banco de dados offline</li>
+                        <li>Catálogos sempre disponíveis</li>
+                        <li>Calculadora funcional</li>
+                        <li>Projetos salvos localmente</li>
+                        <li>Zero dependência de internet</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">400+</div>
+                    <div class="stat-label">Padrões de MDF</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Fabricantes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Gratuito</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Anúncios</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="cta-final">
+            <h2>Pronto para trabalhar melhor?</h2>
+            <p>
+                Baixe agora e teste gratuitamente. Seu feedback vai ajudar 
+                a tornar o app ainda mais útil para marceneiros!
+            </p>
+            <a href="https://drive.google.com/file/d/SEU-LINK-AQUI/view?usp=sharing" class="btn-download" download>
+                📥 Baixar Versão Beta
+            </a>
+            <p style="margin-top: 2rem; color: #888; font-size: 0.95rem;">
+                💬 Problemas? Sugestões? Entre em contato pelo WhatsApp
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-brand">Marcenaria Pro</div>
+            <p class="footer-text">
+                Desenvolvido com ❤️ por VisioPro Marketing<br>
+                Para marceneiros, por pessoas que entendem de marcenaria
+            </p>
+            <div class="footer-contact">
+                <p>
+                    📧 <a href="mailto:contato@marcenariapro.app">contato@marcenariapro.app</a><br>
+                    📱 <a href="https://wa.me/5577999999999">WhatsApp: (77) 9999-9999</a>
+                </p>
+            </div>
+            <p style="margin-top: 1.5rem; font-size: 0.85rem;">
+                © 2024 Marcenaria Pro • Guanambi, Bahia
+            </p>
+        </footer>
+    </div>
+
+    <!-- Google Analytics (opcional) -->
+    <script>
+        // Adicione seu código do Google Analytics aqui
+    </script>
+</body>
+</html>
