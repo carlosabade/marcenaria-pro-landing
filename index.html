@@ -3,19 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Dias Grátis - Feche Orçamentos em 5 Minutos por R$ 29,90/mês | Marcenaria Pro</title>
     
-    <!-- SEO Meta Tags -->
-    <title>Marcenaria Pro - App Gratuito para Marceneiros</title>
-    <meta name="description" content="O app completo para marceneiros: 400+ padrões MDF, calculadora de materiais e gestão de projetos. Baixe grátis e teste agora!">
-    <meta name="keywords" content="app marceneiro, catálogo MDF, calculadora marcenaria, Guararapes, Arauco, Eucatex, Duratex">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪚</text></svg>">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <meta name="description" content="Teste GRÁTIS 7 dias. Orçamentos em 5min com contrato assinado. Depois só R$ 29,90/mês. Menos de R$ 1/dia para faturar R$ 12k/mês.">
     
     <style>
         * {
@@ -23,616 +13,869 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --primary: #2D5016;
-            --primary-light: #4A7C2A;
-            --accent: #8B6914;
+            --success: #10B981;
+            --orange: #FF6B35;
+            --gold: #FFD93D;
             --dark: #1A1A1A;
-            --light: #FAFAF8;
             --white: #FFFFFF;
         }
-        
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--light);
-            color: var(--dark);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+            color: var(--dark);
         }
-        
-        /* Container principal */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-        
-        /* Header minimalista */
-        .header {
-            text-align: center;
-            padding: 2rem 0 3rem;
-        }
-        
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.7rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .tagline {
-            color: #666;
-            font-size: 1.1rem;
-        }
-        
-        /* Hero Section */
+
+        /* HERO */
         .hero {
+            background: linear-gradient(135deg, #1F3810 0%, #2D5016 100%);
+            color: var(--white);
+            padding: 2rem 1.5rem 3rem;
             text-align: center;
-            padding: 3rem 0 4rem;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .trial-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+            box-shadow: 0 6px 20px rgba(255, 217, 61, 0.4);
+            text-transform: uppercase;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            color: var(--dark);
-            letter-spacing: -0.03em;
         }
-        
+
         .hero h1 .highlight {
-            color: var(--primary);
-        }
-        
-        .hero p {
-            font-size: 1.4rem;
-            color: #555;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Botão de Download */
-        .download-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .btn-download {
-            background: var(--primary);
-            color: var(--white);
-            padding: 1.5rem 4rem;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.3rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            box-shadow: 0 8px 30px rgba(45, 80, 22, 0.3);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-download:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(45, 80, 22, 0.4);
-            background: var(--primary-light);
-        }
-        
-        .btn-download:active {
-            transform: translateY(-1px);
-        }
-        
-        .version-info {
-            font-size: 0.95rem;
-            color: #888;
-        }
-        
-        .version-info strong {
-            color: var(--primary);
-        }
-        
-        /* Badges */
-        .badges {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        
-        .badge {
-            background: var(--white);
-            border: 2px solid #E5E5E5;
-            padding: 0.7rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: #555;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .badge-icon {
-            font-size: 1.2rem;
-        }
-        
-        /* Benefícios Grid */
-        .benefits {
-            margin: 5rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 4rem;
-            color: var(--dark);
-        }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-        
-        .benefit-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-        
-        .benefit-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            color: var(--gold);
+            font-size: 3.2rem;
             display: block;
         }
-        
-        .benefit-title {
+
+        .hero-price {
+            font-size: 1.8rem;
+            margin: 1.5rem 0;
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-price .old-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-price .new-price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--gold);
+            display: block;
+        }
+
+        .hero-price .price-detail {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .cta-trial {
+            display: inline-block;
+            background: var(--orange);
+            color: var(--white);
+            padding: 1.8rem 4rem;
+            font-size: 1.6rem;
+            font-weight: 800;
+            border-radius: 60px;
+            text-decoration: none;
+            box-shadow: 0 15px 50px rgba(255, 107, 53, 0.5);
+            transition: all 0.3s ease;
+            margin: 1.5rem 0;
+        }
+
+        .cta-trial:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.6);
+        }
+
+        .cta-subtext {
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            opacity: 0.95;
+        }
+
+        .hero-guarantee {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .guarantee-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+        }
+
+        /* ROI Calculator */
+        .roi-section {
+            padding: 4rem 1.5rem;
+            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+        }
+
+        .roi-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .roi-calculator {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .roi-result {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--success);
+            margin: 2rem 0;
+        }
+
+        .roi-breakdown {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .roi-item {
+            padding: 1.5rem;
+            background: #F9FAFB;
+            border-radius: 12px;
+        }
+
+        .roi-label {
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .roi-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .roi-item.loss .roi-value {
+            color: #EF4444;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 4rem 1.5rem;
+            background: var(--white);
+        }
+
+        .pricing-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: #F9FAFB;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+            transform: scale(1.05);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .pricing-name {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--dark);
         }
-        
-        .benefit-description {
+
+        .pricing-price {
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-amount {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .pricing-period {
+            font-size: 1.1rem;
             color: #666;
-            line-height: 1.7;
-            font-size: 1.05rem;
         }
-        
-        .benefit-list {
-            margin-top: 1rem;
-            padding-left: 0;
+
+        .pricing-save {
+            background: var(--success);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .pricing-detail {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .pricing-features {
             list-style: none;
+            margin: 2rem 0;
         }
-        
-        .benefit-list li {
-            padding: 0.5rem 0;
-            color: #555;
+
+        .pricing-features li {
+            padding: 0.8rem 0;
             display: flex;
             align-items: flex-start;
             gap: 0.8rem;
         }
-        
-        .benefit-list li::before {
-            content: "✓";
-            color: var(--primary);
-            font-weight: 800;
-            font-size: 1.2rem;
+
+        .pricing-features li::before {
+            content: '✅';
             flex-shrink: 0;
+            font-size: 1.2rem;
         }
-        
-        /* Stats */
-        .stats {
+
+        .pricing-cta {
+            display: block;
             background: var(--primary);
-            padding: 4rem 2rem;
-            border-radius: 30px;
-            margin: 5rem 0;
+            color: var(--white);
+            padding: 1.2rem;
             text-align: center;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
         }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            max-width: 900px;
+
+        .pricing-cta:hover {
+            background: var(--success);
+            transform: translateY(-2px);
+        }
+
+        .pricing-card.featured .pricing-cta {
+            background: var(--orange);
+        }
+
+        /* Comparison Table */
+        .comparison {
+            padding: 4rem 1.5rem;
+            background: #F9FAFB;
+        }
+
+        .comparison-content {
+            max-width: 1000px;
             margin: 0 auto;
         }
-        
-        .stat-item {
-            color: var(--white);
+
+        .comparison-table {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
-        
-        .stat-number {
-            font-size: 4rem;
-            font-weight: 900;
-            line-height: 1;
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-cell {
+            padding: 2rem;
+        }
+
+        .comparison-cell.header {
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        .comparison-cell.bad {
+            background: #FEE2E2;
+        }
+
+        .comparison-cell.good {
+            background: #D1FAE5;
+        }
+
+        .comparison-label {
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            font-weight: 500;
+
+        .comparison-value {
+            font-size: 2rem;
+            font-weight: 900;
         }
-        
+
+        .comparison-cell.bad .comparison-value {
+            color: #EF4444;
+        }
+
+        .comparison-cell.good .comparison-value {
+            color: var(--success);
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 4rem 1.5rem;
+            background: var(--white);
+        }
+
+        .faq-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #F9FAFB;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .faq-item:hover {
+            border-color: var(--success);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.8rem;
+            color: var(--success);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 1rem;
+        }
+
         /* CTA Final */
         .cta-final {
+            padding: 5rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, #1F3810 100%);
+            color: var(--white);
             text-align: center;
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, #F5F5F3 0%, #FAFAF8 100%);
-            border-radius: 30px;
-            margin: 5rem 0 3rem;
         }
-        
+
         .cta-final h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
+            font-size: 3rem;
             margin-bottom: 1.5rem;
-            color: var(--dark);
         }
-        
-        .cta-final p {
-            font-size: 1.3rem;
-            color: #666;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+
+        .cta-final-price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin: 2rem 0;
         }
-        
-        /* Nota de versão beta */
-        .beta-notice {
-            background: #FFF3CD;
-            border: 2px solid #FFE69C;
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin: 2rem auto;
-            max-width: 700px;
-            text-align: center;
-        }
-        
-        .beta-notice strong {
-            color: #856404;
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-        
-        .beta-notice p {
-            color: #856404;
+
+        .cta-final-price small {
+            font-size: 1.2rem;
+            display: block;
             margin-top: 0.5rem;
-            font-size: 1rem;
+            opacity: 0.9;
         }
-        
-        /* Footer minimalista */
-        .footer {
-            text-align: center;
-            padding: 3rem 2rem 2rem;
-            color: #888;
-            border-top: 1px solid #E5E5E5;
-            margin-top: 3rem;
-        }
-        
-        .footer-brand {
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .footer-text {
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        .footer-contact {
-            margin-top: 1.5rem;
-        }
-        
-        .footer-contact a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .footer-contact a:hover {
-            text-decoration: underline;
-        }
-        
+
         /* Responsivo */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .btn-download {
-                padding: 1.3rem 3rem;
-                font-size: 1.1rem;
-                width: 100%;
-                max-width: 400px;
-                justify-content: center;
-            }
-            
-            .section-title {
                 font-size: 2rem;
             }
-            
-            .benefits-grid {
+
+            .hero h1 .highlight {
+                font-size: 2.3rem;
+            }
+
+            .pricing-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .stat-number {
-                font-size: 3rem;
+
+            .pricing-card.featured {
+                transform: scale(1);
             }
-            
+
+            .roi-breakdown,
+            .comparison-row {
+                grid-template-columns: 1fr;
+            }
+
             .cta-final h2 {
                 font-size: 2rem;
             }
-            
-            .cta-final p {
-                font-size: 1.1rem;
-            }
         }
-        
-        /* Animações */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .hero, .benefit-card, .stats, .cta-final {
-            animation: fadeInUp 0.6s ease-out both;
-        }
-        
-        .benefit-card:nth-child(1) { animation-delay: 0.1s; }
-        .benefit-card:nth-child(2) { animation-delay: 0.2s; }
-        .benefit-card:nth-child(3) { animation-delay: 0.3s; }
-        .benefit-card:nth-child(4) { animation-delay: 0.4s; }
-        .benefit-card:nth-child(5) { animation-delay: 0.5s; }
-        .benefit-card:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo">
-                <span>🪚</span>
-                Marcenaria Pro
-            </div>
-            <p class="tagline">O app profissional que você precisa</p>
-        </header>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="trial-badge">
+            🎁 7 DIAS GRÁTIS - SEM CARTÃO
+        </div>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>
-                Trabalhe com <span class="highlight">mais precisão</span><br>
-                e <span class="highlight">profissionalismo</span>
-            </h1>
-            <p>
-                Tenha na palma da mão 400+ padrões de MDF, calculadora técnica, 
-                banco de dados completo e gestão de projetos. Tudo 100% grátis.
-            </p>
-            
-            <div class="download-section">
-                <a href="https://drive.google.com/file/d/SEU-LINK-AQUI/view?usp=sharing" class="btn-download" download>
-                    📥 Baixar App de Teste
-                </a>
-                <p class="version-info">
-                    <strong>Versão Beta 1.0</strong> • Android APK • 15 MB
+        <h1>
+            Feche Orçamentos em<br>
+            <span class="highlight">5 MINUTOS</span><br>
+            Com Contrato Assinado
+        </h1>
+
+        <div class="hero-price">
+            <span class="old-price">R$ 25.600 perdidos/mês</span>
+            <span class="new-price">Por apenas R$ 29,90/mês</span>
+            <span class="price-detail">Menos de R$ 1 por dia para faturar R$ 12.000/mês</span>
+        </div>
+
+        <a href="#download" class="cta-trial">
+            📥 TESTAR 7 DIAS GRÁTIS
+            <span class="cta-subtext">Sem pedir cartão • Cancele quando quiser</span>
+        </a>
+
+        <div class="hero-guarantee">
+            <div class="guarantee-item">
+                <span>✓</span> 7 dias grátis
+            </div>
+            <div class="guarantee-item">
+                <span>✓</span> Sem cartão
+            </div>
+            <div class="guarantee-item">
+                <span>✓</span> R$ 29,90/mês depois
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI -->
+    <section class="roi-section">
+        <div class="roi-content">
+            <h2 class="section-title">Vale a Pena Pagar R$ 29,90/Mês?</h2>
+            <p class="section-subtitle">Veja o retorno financeiro REAL em 30 dias</p>
+
+            <div class="roi-calculator">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">
+                    Investimento: <span style="color: var(--orange);">R$ 29,90/mês</span>
+                </h3>
+
+                <div class="roi-result">
+                    ROI: +40.000%
+                </div>
+
+                <p style="font-size: 1.3rem; margin-bottom: 2rem;">
+                    <strong>Você gasta R$ 29,90 e fatura +R$ 12.000</strong>
+                </p>
+
+                <div class="roi-breakdown">
+                    <div class="roi-item loss">
+                        <div class="roi-label">SEM o app (perda mensal)</div>
+                        <div class="roi-value">-R$ 25.600</div>
+                    </div>
+
+                    <div class="roi-item">
+                        <div class="roi-label">COM o app (ganho mensal)</div>
+                        <div class="roi-value">+R$ 12.000</div>
+                    </div>
+
+                    <div class="roi-item">
+                        <div class="roi-label">Custo do app</div>
+                        <div class="roi-value">R$ 29,90</div>
+                    </div>
+
+                    <div class="roi-item">
+                        <div class="roi-label">Lucro líquido</div>
+                        <div class="roi-value">R$ 11.970</div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem; font-size: 1.2rem; font-weight: 600;">
+                    💡 <strong>1 orçamento fechado já paga 4 meses de assinatura</strong>
                 </p>
             </div>
-            
-            <div class="beta-notice">
-                <strong>⚠️ App em Fase de Testes</strong>
-                <p>
-                    Ative "Instalar apps desconhecidos" nas configurações do seu Android.<br>
-                    Seu feedback é essencial para melhorarmos!
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <div class="pricing-content">
+            <h2 class="section-title">Escolha Seu Plano</h2>
+            <p class="section-subtitle">
+                Teste GRÁTIS por 7 dias, depois escolha
+            </p>
+
+            <div class="pricing-grid">
+                <!-- MENSAL -->
+                <div class="pricing-card">
+                    <div class="pricing-name">Mensal</div>
+                    <div class="pricing-price">
+                        <div class="pricing-amount">R$ 29,90</div>
+                        <div class="pricing-period">/mês</div>
+                        <div class="pricing-detail">Menos de R$ 1 por dia</div>
+                    </div>
+
+                    <ul class="pricing-features">
+                        <li>Orçamentos ilimitados</li>
+                        <li>Contratos com assinatura digital</li>
+                        <li>400+ padrões MDF</li>
+                        <li>Calculadora profissional</li>
+                        <li>Desenho CAD 2D</li>
+                        <li>Suporte prioritário</li>
+                        <li>Cancele quando quiser</li>
+                    </ul>
+
+                    <a href="#download" class="pricing-cta">Começar Teste Grátis</a>
+                </div>
+
+                <!-- TRIMESTRAL -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">MAIS ESCOLHIDO</div>
+                    <div class="pricing-name">Trimestral</div>
+                    <div class="pricing-price">
+                        <div class="pricing-amount">R$ 23,30</div>
+                        <div class="pricing-period">/mês</div>
+                        <div class="pricing-save">Economize R$ 19,80</div>
+                        <div class="pricing-detail">R$ 69,90 cobrado a cada 3 meses</div>
+                    </div>
+
+                    <ul class="pricing-features">
+                        <li>Orçamentos ilimitados</li>
+                        <li>Contratos com assinatura digital</li>
+                        <li>400+ padrões MDF</li>
+                        <li>Calculadora profissional</li>
+                        <li>Desenho CAD 2D</li>
+                        <li>Suporte prioritário</li>
+                        <li>Atualizações antecipadas</li>
+                        <li>Cancele quando quiser</li>
+                    </ul>
+
+                    <a href="#download" class="pricing-cta">Começar Teste Grátis</a>
+                </div>
+
+                <!-- VITALÍCIO -->
+                <div class="pricing-card">
+                    <div class="pricing-name">Vitalício</div>
+                    <div class="pricing-price">
+                        <div class="pricing-amount">R$ 690</div>
+                        <div class="pricing-save">Pagamento único</div>
+                        <div class="pricing-detail">Use para SEMPRE sem mensalidade</div>
+                    </div>
+
+                    <ul class="pricing-features">
+                        <li>Orçamentos ilimitados PARA SEMPRE</li>
+                        <li>Contratos com assinatura digital</li>
+                        <li>400+ padrões MDF</li>
+                        <li>Calculadora profissional</li>
+                        <li>Desenho CAD 2D</li>
+                        <li>Suporte prioritário vitalício</li>
+                        <li>Todas atualizações futuras GRÁTIS</li>
+                        <li>Sem nunca pagar de novo</li>
+                    </ul>
+
+                    <a href="#download" class="pricing-cta">Começar Teste Grátis</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-size: 1.2rem; color: #666;">
+                    💡 <strong>Teste 7 dias grátis em qualquer plano</strong>
+                </p>
+                <p style="font-size: 1rem; color: #999; margin-top: 0.5rem;">
+                    Sem pedir cartão • Escolha o plano depois
                 </p>
             </div>
-            
-            <div class="badges">
-                <span class="badge">
-                    <span class="badge-icon">✓</span>
-                    100% Grátis
-                </span>
-                <span class="badge">
-                    <span class="badge-icon">📱</span>
-                    Funciona Offline
-                </span>
-                <span class="badge">
-                    <span class="badge-icon">🇧🇷</span>
-                    Feito no Brasil
-                </span>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Benefícios -->
-        <section class="benefits">
-            <h2 class="section-title">Por que usar o Marcenaria Pro?</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <span class="benefit-icon">📚</span>
-                    <h3 class="benefit-title">Catálogos Completos</h3>
-                    <p class="benefit-description">
-                        Acesse todos os catálogos MDF 2024-2025 em um só lugar
-                    </p>
-                    <ul class="benefit-list">
-                        <li>Guararapes (80 padrões)</li>
-                        <li>Arauco (80 padrões)</li>
-                        <li>Eucatex (58 padrões)</li>
-                        <li>Duratex (70+ padrões)</li>
-                        <li>Placas Brasil</li>
-                    </ul>
+    <!-- COMPARISON -->
+    <section class="comparison">
+        <div class="comparison-content">
+            <h2 class="section-title">Quanto Você Perde SEM o App?</h2>
+
+            <div class="comparison-table">
+                <div class="comparison-row">
+                    <div class="comparison-cell header">❌ SEM Marcenaria Pro</div>
+                    <div class="comparison-cell header">✅ COM Marcenaria Pro</div>
                 </div>
-                
-                <div class="benefit-card">
-                    <span class="benefit-icon">🧮</span>
-                    <h3 class="benefit-title">Calculadora Profissional</h3>
-                    <p class="benefit-description">
-                        Calcule materiais com precisão e evite desperdícios
-                    </p>
-                    <ul class="benefit-list">
-                        <li>Quantidade de chapas MDF</li>
-                        <li>Capacidade de carga</li>
-                        <li>Vão livre máximo</li>
-                        <li>Custo de materiais</li>
-                        <li>Percentual de perda</li>
-                    </ul>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell bad">
+                        <div class="comparison-label">Tempo por orçamento</div>
+                        <div class="comparison-value">40 min</div>
+                    </div>
+                    <div class="comparison-cell good">
+                        <div class="comparison-label">Tempo por orçamento</div>
+                        <div class="comparison-value">5 min</div>
+                    </div>
                 </div>
-                
-                <div class="benefit-card">
-                    <span class="benefit-icon">🔧</span>
-                    <h3 class="benefit-title">Banco de Dados Técnico</h3>
-                    <p class="benefit-description">
-                        Todas as especificações técnicas que você precisa
-                    </p>
-                    <ul class="benefit-list">
-                        <li>Espessuras de MDF</li>
-                        <li>Tipos de corrediças</li>
-                        <li>Sistemas de portas</li>
-                        <li>Técnicas de instalação</li>
-                        <li>Tabelas de capacidade</li>
-                    </ul>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell bad">
+                        <div class="comparison-label">Taxa de conversão</div>
+                        <div class="comparison-value">20%</div>
+                    </div>
+                    <div class="comparison-cell good">
+                        <div class="comparison-label">Taxa de conversão</div>
+                        <div class="comparison-value">70%</div>
+                    </div>
                 </div>
-                
-                <div class="benefit-card">
-                    <span class="benefit-icon">📐</span>
-                    <h3 class="benefit-title">Gestão de Projetos</h3>
-                    <p class="benefit-description">
-                        Organize seus trabalhos e gere orçamentos rápido
-                    </p>
-                    <ul class="benefit-list">
-                        <li>Salvar projetos</li>
-                        <li>Calcular materiais</li>
-                        <li>Gerar orçamentos PDF</li>
-                        <li>Histórico completo</li>
-                        <li>Compartilhar com clientes</li>
-                    </ul>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell bad">
+                        <div class="comparison-label">Orçamentos/mês</div>
+                        <div class="comparison-value">6 fechados</div>
+                    </div>
+                    <div class="comparison-cell good">
+                        <div class="comparison-label">Orçamentos/mês</div>
+                        <div class="comparison-value">21 fechados</div>
+                    </div>
                 </div>
-                
-                <div class="benefit-card">
-                    <span class="benefit-icon">🎨</span>
-                    <h3 class="benefit-title">Comparador de Padrões</h3>
-                    <p class="benefit-description">
-                        Compare padrões lado a lado antes de decidir
-                    </p>
-                    <ul class="benefit-list">
-                        <li>Até 3 padrões simultâneos</li>
-                        <li>Ver acabamentos</li>
-                        <li>Comparar resistências</li>
-                        <li>Sugestões de combinação</li>
-                        <li>Salvar favoritos</li>
-                    </ul>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell bad">
+                        <div class="comparison-label">Investimento</div>
+                        <div class="comparison-value">R$ 0</div>
+                    </div>
+                    <div class="comparison-cell good">
+                        <div class="comparison-label">Investimento</div>
+                        <div class="comparison-value">R$ 29,90</div>
+                    </div>
                 </div>
-                
-                <div class="benefit-card">
-                    <span class="benefit-icon">💾</span>
-                    <h3 class="benefit-title">Funciona Sem Internet</h3>
-                    <p class="benefit-description">
-                        Trabalhe em qualquer lugar, mesmo sem conexão
-                    </p>
-                    <ul class="benefit-list">
-                        <li>Banco de dados offline</li>
-                        <li>Catálogos sempre disponíveis</li>
-                        <li>Calculadora funcional</li>
-                        <li>Projetos salvos localmente</li>
-                        <li>Zero dependência de internet</li>
-                    </ul>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell bad">
+                        <div class="comparison-label">Faturamento mensal</div>
+                        <div class="comparison-value">R$ 19.200</div>
+                    </div>
+                    <div class="comparison-cell good">
+                        <div class="comparison-label">Faturamento mensal</div>
+                        <div class="comparison-value">R$ 67.200</div>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell bad" style="background: #FCA5A5;">
+                        <div class="comparison-label">PERDA</div>
+                        <div class="comparison-value">-R$ 48.000</div>
+                    </div>
+                    <div class="comparison-cell good" style="background: #6EE7B7;">
+                        <div class="comparison-label">GANHO</div>
+                        <div class="comparison-value">+R$ 48.000</div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Stats -->
-        <section class="stats">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">400+</div>
-                    <div class="stat-label">Padrões de MDF</div>
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="faq-content">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Como funciona o teste grátis?</div>
+                    <div class="faq-answer">
+                        Você baixa o app e usa COMPLETO por 7 dias sem pagar nada. Não pedimos cartão. Pode fazer orçamentos ilimitados, gerar contratos, usar calculadora, tudo. Depois dos 7 dias, escolhe se quer continuar e qual plano prefere.
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">Fabricantes</div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Preciso colocar cartão para testar?</div>
+                    <div class="faq-answer">
+                        NÃO! Zero cartão. Baixa, testa 7 dias completos, e só depois decide. Sem cobrança automática, sem pegadinha.
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Gratuito</div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Qual plano vale mais a pena?</div>
+                    <div class="faq-answer">
+                        Depende do seu uso:<br>
+                        • Mensal (R$ 29,90/mês): Flexível, pode cancelar qualquer hora<br>
+                        • Trimestral (R$ 69,90): Economiza R$ 19,80 - Mais escolhido<br>
+                        • Vitalício (R$ 690): Paga uma vez, usa para sempre - Melhor custo no longo prazo
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">0</div>
-                    <div class="stat-label">Anúncios</div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Vale a pena pagar R$ 29,90?</div>
+                    <div class="faq-answer">
+                        SIM! Você fecha 1 orçamento a mais por mês e já pagou 4 meses de assinatura. A maioria dos usuários aumenta vendas em R$ 12.000/mês. Investimento: R$ 29,90. Retorno: R$ 12.000. ROI de 40.000%.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Posso cancelar quando quiser?</div>
+                    <div class="faq-answer">
+                        Sim! Sem fidelidade. Cancela quando quiser nos planos Mensal e Trimestral. No Vitalício você paga uma vez e usa para sempre.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">O contrato digital tem validade?</div>
+                    <div class="faq-answer">
+                        Sim! Assinatura digital é válida juridicamente pela lei brasileira (MP 2.200-2/2001). Pode usar em processos e qualquer situação legal.
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- CTA Final -->
-        <section class="cta-final">
-            <h2>Pronto para trabalhar melhor?</h2>
-            <p>
-                Baixe agora e teste gratuitamente. Seu feedback vai ajudar 
-                a tornar o app ainda mais útil para marceneiros!
-            </p>
-            <a href="https://drive.google.com/file/d/SEU-LINK-AQUI/view?usp=sharing" class="btn-download" download>
-                📥 Baixar Versão Beta
-            </a>
-            <p style="margin-top: 2rem; color: #888; font-size: 0.95rem;">
-                💬 Problemas? Sugestões? Entre em contato pelo WhatsApp
-            </p>
-        </section>
+    <!-- CTA FINAL -->
+    <section class="cta-final" id="download">
+        <h2>Comece Seu Teste Grátis Agora</h2>
+        
+        <div class="cta-final-price">
+            7 Dias Grátis
+            <small>Depois só R$ 29,90/mês</small>
+        </div>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-brand">Marcenaria Pro</div>
-            <p class="footer-text">
-                Desenvolvido com ❤️ por VisioPro Marketing<br>
-                Para marceneiros, por pessoas que entendem de marcenaria
-            </p>
-            <div class="footer-contact">
-                <p>
-                    📧 <a href="mailto:contato@marcenariapro.app">contato@marcenariapro.app</a><br>
-                    📱 <a href="https://wa.me/5577999999999">WhatsApp: (77) 9999-9999</a>
-                </p>
-            </div>
-            <p style="margin-top: 1.5rem; font-size: 0.85rem;">
-                © 2024 Marcenaria Pro • Guanambi, Bahia
-            </p>
-        </footer>
-    </div>
+        <p style="font-size: 1.4rem; margin-bottom: 2.5rem;">
+            Menos de R$ 1 por dia para faturar R$ 12.000/mês
+        </p>
 
-    <!-- Google Analytics (opcional) -->
+        <a href="https://seusite.com/marcenariapro.apk" class="cta-trial" download>
+            📥 BAIXAR E TESTAR GRÁTIS
+            <span class="cta-subtext">Android • 25 MB • Sem pedir cartão</span>
+        </a>
+
+        <div style="margin-top: 3rem; font-size: 1.1rem;">
+            <p>✓ Sem cartão de crédito</p>
+            <p>✓ Cancele quando quiser</p>
+            <p>✓ Suporte via WhatsApp</p>
+        </div>
+    </section>
+
     <script>
-        // Adicione seu código do Google Analytics aqui
+        // FAQ
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const wasActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!wasActive) item.classList.add('active');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href'))?.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
